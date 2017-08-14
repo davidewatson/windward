@@ -1,5 +1,5 @@
 /*
-Copyright 2016 The Barrel Authors. All rights reserved.
+Copyright 2017 Samsung CNCT. All rights reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -14,5 +14,25 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-//Package cmd is the main program command via cobra
-package cmd
+package main
+
+import (
+	"os"
+
+	"github.com/samsung-cnct/windward/cmd"
+)
+
+var (
+	Version string
+	Build   string
+)
+
+func main() {
+	// Wierdness to allow setting these values during build,
+	// was not able to set the values in the package directly.
+	cmd.Version = Version
+	cmd.Build = Build
+
+	cmd.Execute()
+	os.Exit(cmd.ExitCode)
+}

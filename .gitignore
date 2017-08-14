@@ -23,5 +23,14 @@ _testmain.go
 *.test
 *.prof
 
-# cruft
-*~
+
+bin/*
+docs/*
+#vendor/*
+
+coverage.out
+coverage.html
+coverage-all.out
+coverage-all.html
+
+exampleapp*
